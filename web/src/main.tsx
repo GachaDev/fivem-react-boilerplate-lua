@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import { VisibilityProvider } from './providers/VisibilityProvider';
 import App from './components/App';
 import './index.css';
+const container = document.getElementById('root');
+const root = createRoot(container as HTMLElement);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+root.render(
     <VisibilityProvider>
-      <App />
+        <App />
     </VisibilityProvider>
-  </React.StrictMode>,
 );
